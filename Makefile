@@ -1,12 +1,14 @@
-# NCTU 2020 spring, OSDI Lab 2 by Waylon Shih
+# NCTU 2020 spring, OSDI Lab by Waylon Shih
 
 CC = aarch64-linux-gnu-gcc
 LD = aarch64-linux-gnu-ld
 COBJ = aarch64-linux-gnu-objcopy
+LIBS = $(wildcard lib/*.c)
 SRCS = $(wildcard src/*.c)
 ASMS = $(wildcard src/*.S)
-OBJS = $(SRCS:.c=.o) $(ASMS:=.o)
-CFLAGS = -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles -Iinc
+OBJS = $(SRCS:.c=.o) $(ASMS:=.o) $(LIBS:.c=.o)
+INCFLAGS = -Iinclude
+CFLAGS = -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles $(INCFLAGS)
 
 all: clean kernel8.img
 
@@ -21,7 +23,7 @@ kernel8.img: $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f kernel8.elf src/*.o || true
+	rm -f kernel8.elf $(OBJS) || true
 
 run:
 	qemu-system-aarch64 -M raspi3 -kernel kernel8.img -serial stdio
