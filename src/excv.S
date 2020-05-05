@@ -66,10 +66,10 @@ vector_table:
     ventry  lower_el_aarch64_fiq    // 0x500
     ventry  lower_el_aarch64_serror // 0x580
 
-    ventry  lower_el_aarch64_sync   // 0x600
-    ventry  lower_el_aarch64_irq    // 0x680
-    ventry  lower_el_aarch64_fiq    // 0x700
-    ventry  lower_el_aarch64_serror // 0x780
+    ventry  lower_el_aarch32_sync   // 0x600
+    ventry  lower_el_aarch32_irq    // 0x680
+    ventry  lower_el_aarch32_fiq    // 0x700
+    ventry  lower_el_aarch32_serror // 0x780
 
 /**
  * Exception from the current EL while using SP_EL0

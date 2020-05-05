@@ -23,8 +23,10 @@
  *
  */
 
-#include "gpio.h"
-#include "mbox.h"
+#include <uart.h>
+#include <gpio.h>
+#include <mbox.h>
+#include <getc.h>
 
 
 /* PL011 UART registers */
@@ -129,6 +131,7 @@ void uart0_init()
  */
 void uart0_handler() {
 	*UART0_ICR = 0x7FF;  // clear irq
+	//readbuf_enqueue(uart_getc());	
 }
 
 /**

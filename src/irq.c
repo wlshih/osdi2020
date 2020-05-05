@@ -1,8 +1,8 @@
 /*
  * src/irq.c
  * for IRQ handlers and settings:
- *     timer interrupt
- *     uart interrupt
+ *     a. timer interrupt
+ *     b. uart interrupt
  */
 
 #include "irq.h"

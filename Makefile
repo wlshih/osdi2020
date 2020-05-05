@@ -35,3 +35,6 @@ debug: all
 # Transfer img file to shared folder
 teleport:
 	cp kernel8.img /media/sf_TELEPORT/kernel8.img
+
+screen:
+	sudo screen /dev/ttyUSB0 115200
