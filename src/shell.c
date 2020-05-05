@@ -7,6 +7,7 @@
 #include "msg.h"
 #include "irq.h"
 #include "getc.h"
+#include "bootloader.h"
 
 // say hello
 void shell_welcome_msg() {
@@ -130,7 +131,7 @@ void cmd_reboot() {
 }
 
 void cmd_load() {
-	
+	loadimg();
 }
 
 void cmd_hardwareInfo() {

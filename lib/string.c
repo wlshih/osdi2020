@@ -79,3 +79,13 @@ char* revstr(char* str, int start, int end) {
 	return str;
 }
 
+// The function atoi() takes a string (which represents an integer) 
+// as an argument and returns its value of type int.
+// If str is not a valid input, the funcion returns zero.
+int atoi(char* str) {
+	int result = 0;
+	for(int i=0; str[i] != '\0'; i++)
+		result = result * 10 + str[i] - '0';
+	
+	return result;
+}

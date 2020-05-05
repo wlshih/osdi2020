@@ -5,3 +5,4 @@ char* itoa(unsigned int val, char* str);
 char* ftoa(unsigned int frac, unsigned int deno, char* str);
 void swap(char* a, char* b);
 char* revstr(char* str, int start, int end);
+int atoi(char* str);
