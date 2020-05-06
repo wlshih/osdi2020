@@ -6,3 +6,4 @@ char* ftoa(unsigned int frac, unsigned int deno, char* str);
 void swap(char* a, char* b);
 char* revstr(char* str, int start, int end);
 int atoi(char* str);
+void* memcpy(void *dst, const void *src, unsigned int len);

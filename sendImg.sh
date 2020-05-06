@@ -37,9 +37,13 @@ printf "target:          %s\n" $dev
 printf "target address:  0x%x\n\n" $location
 
 printf "%d\r" $location > $dev
+sleep 0.1
 printf "%d\r" $size > $dev
+sleep 0.1
+printf "1\r" > $dev # start signal
 
 #dd status=progress if=$kernel of=$dev || echo "[ Transfer error ]"
 
 exit
+
 
