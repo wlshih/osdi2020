@@ -42,7 +42,9 @@ printf "%d\r" $size > $dev
 sleep 0.1
 printf "1\r" > $dev # start signal
 
-#dd status=progress if=$kernel of=$dev || echo "[ Transfer error ]"
+dd status=progress if=$kernel of=$dev || echo "[ Transfer error ]"
+
+echo -ne "\a"
 
 exit
 

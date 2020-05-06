@@ -8,7 +8,7 @@ SRCS = $(wildcard src/*.c)
 ASMS = $(wildcard src/*.S)
 OBJS = $(SRCS:.c=.o) $(ASMS:=.o) $(LIBS:.c=.o)
 INCFLAGS = -Iinclude
-CFLAGS = -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles $(INCFLAGS)
+CFLAGS = -Wall -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles -fPIC $(INCFLAGS)
 
 all: clean kernel8.img
 
